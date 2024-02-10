@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --main-color: #20c997;
+    --secondary-color: #dee3e4;
+    --text-muted: #6c757d;
+    --main-transition: 0.4s;
+    --padding-btn: 0.8rem 2.6rem;
+}
+.text-color{
+    color: #20c997;
+}
+.text-muted{
+    color: #6c757d;
+} 
+.bg-color{
+    background-color: #20c997;;
+}
+.text-size{
+    font-size:1rem;
+}
+
+/* Start Title */
+.main-title h2{
+    color: var(--secondary-color);
+    font-size: calc(1.95rem + 7.4vw);
+    font-weight: 600;
+    opacity: 0.4;
+    text-transform: uppercase;
+}
+.main-title h3{
+    font-size: 40px;;
+    font-weight: bold;
+}
+.main-title::after{
+    content: '';
+    width: 90px;
+    height: 2px;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* End Title */
+
+/* Start Navbar */
+.navbar{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+}
+.navbar .navbar-toggler{
+    margin-left: 5rem;
+    color: white;
+    font-size: 25px;
+}
+.navbar .navbar-nav .nav-link{
+    color: white;
+    font-weight: 500;
+}
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active{
+    color: var(--main-color);
+}
+/* End Navbar */
+
+/* Start Home */
+header{
+    background-image: url(../images/intro-bg.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+}
+header .layer{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 20, 24, 0.8) ;
+}
+header .first{
+    font-size: 1.75rem;
+}
+header h1{
+    font-size: 73px;
+}
+header .last{
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+header button{
+    background-color: transparent;
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    font-size: 18px;
+    padding: var(--padding-btn);
+    transition: background-color var(--main-transition), color var(--main-transition);
+}
+header button:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+header .layer i{
+    color: white;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    animation: up-to-down infinite 1.7s;
+}
+/* End Home */
+
+/* Start About */
+.about ul li{
+    padding: 12px 0;
+}
+.about ul li:not(:last-child){
+    border-bottom: 1px solid #eaeaea;
+}
+.about ul li a{
+    color: var(--main-color);
+    text-decoration: none;
+}
+.about ul li a:hover{
+    color: #1d9e77;
+}
+.about button{
+    color: white;
+    padding: var(--padding-btn);
+}
+.about button:hover{
+    color: white;
+    background-color: #1d9e77;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
+}
+.about .item::before{
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    border-left: 1px dotted #e0dede;
+}
+.about .one::after{
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -1px;
+    border-left: 1px solid white;
+}
+.about .item h4{
+    line-height: 1.3;
+}
+/* End About */
+
+/* Start Services */
+.services .box .icon{
+    width: 70px;
+    height: 70px;
+    background-color: #09c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-right: 20px;
+    padding: 20px;
+}
+.services .box .icon i{
+    font-size: 30px;
+    color: var(--main-color);
+}
+.services .box .item h3{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/* End Services */
+
+/* Start Resume */
+.resume .card .box p{
+    width: fit-content;
+}
+.resume .skill{
+    height: 0.5rem;
+    background-color: var(--secondary-color);
+}
+.resume .download{
+    padding: var(--padding-btn);
+    border-width: 2px;
+}
+/* End Resume */
+
+/* Start Portfolio */
+.portfolio .nav button{
+    color: var(--text-muted);
+}
+.portfolio .nav button:hover{
+    color: var(--main-color);
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: transparent;
+    color: var(--main-color);
+    border-radius: 0;
+    border-bottom: 2px solid var(--main-color);
+}
+.portfolio .box{
+    position: relative;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #09c;
+
+}
+.portfolio .box::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.portfolio .box .layer{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+}
+.portfolio .box:hover .layer{
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+}
+.portfolio .box:hover::after{
+    opacity: 1;
+}
+/* End Portfolio */
+
+/* Start Contact */
+.carousel-indicators{
+    background-color: #09c;
+}
+.carousel-indicators button{
+    display: block;
+    margin: 10px 20px;
+    background-color: #1d9e77;
+}
+/* .carousel-indicators .box {
+    margin: 0 8px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.carousel-indicators .box:hover,
+.carousel-indicators .box button.focus{
+    border: 1px solid var(--main-color);
+}
+.carousel-indicators [data-bs-target]{
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+}  */
+/* End Contact */
+
+/* Start Contact */
+.contact .send{
+    padding: var(--padding-btn);
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
+}
+.contact .send:hover{
+    background-color: #1baa80;
+    box-shadow: 0px 5px 15px rgb(0 0 0 / 30%);
+}
+/* End Contact */
+
+
+
+
+
+
+
+
+
+/* Animation */
+@keyframes up-to-down {
+    0%{opacity: 0;}
+    25%{opacity: 0.5;}
+    100%{bottom: 20px;}
+}
+/* End Animation */
